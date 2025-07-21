@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Poema para Deliane Cristina</title>
+  <style>
+    body {
+      background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      min-height: 200vh;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5em;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 40px;
+      line-height: 1.5em;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    a.voltar {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #ff4e50;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a.voltar:hover {
+      background: #ff4e50;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    button#playPoema {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #ff4e50;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button#playPoema:hover {
+      background: #ff4e50;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="playPoema" onclick="playPoema()">▶️ Ouvir Poema</button>
+
+  <h1>Para Você, Deliane Cristina 💖</h1>
+
+    <p>Deliane Cristina, minha doce paixão,</p>
+    <p>Desde o primeiro instante, conquistou meu coração.</p>
+    <p>Com seu sorriso lindo e seu jeito encantador,</p>
+    <p>Tornou-se em minha vida um eterno amor.</p>
+
+    <p>Cada olhar seu acende em mim a esperança,</p>
+    <p>Cada palavra sua me enche de confiança.</p>
+    <p>Em cada abraço, em cada beijo, eu encontrei</p>
+    <p>O sentido do amor que sempre procurei.</p>
+
+  
+    <p>Hoje, celebramos esses meses de carinho,</p>
+    <p>Caminhando lado a lado, seguindo o mesmo caminho.</p>
+    <p>Que venham anos, sonhos, alegrias sem fim,</p>
+    <p>Porque ao seu lado, Deliane, eu quero tudo assim.</p>
+  
+
+  <br><br>
+
+  <a href="index.html" class="voltar">⬅️ Voltar para a Página Principal</a>
+
+  <audio id="ttsAudio" src="poema-tts.mp3"></audio>
+
+  <script>
+    function playPoema() {
+      const audio = document.getElementById('ttsAudio');
+      audio.play();
+
+      let scrollInterval = setInterval(() => {
+        window.scrollBy(0, 1); // scrolla 1px a cada intervalo
+      }, 50); // a cada 50ms (podes ajustar para mais rápido ou mais lento)
+
+      audio.onended = () => {
+        clearInterval(scrollInterval); // para o scroll quando o áudio acabar
+      };
+    }
+  </script>
+
+</body>
+</html>
